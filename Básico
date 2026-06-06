@@ -1,0 +1,29 @@
+# Verifica se o SSH está ativo
+systemctl status ssh
+
+# Se o SSH estiver funcionando, você verá a mensagem: ‘’active running’’
+# Caso apareça "inactive" ou "dead", confirma como fazer: 
+# Ainda no terminal, inicie o serviço, com o comando: 
+systemctl start ssh
+
+# Para garantir que o SSH inicie automaticamente quando o servidor reiniciar, digite: 
+systemctl enable ssh 
+# E em seguida, verifique novamente o status:
+systemctl status ssh
+
+# Via terminal de comando (Sistema operacional Linux/MacOs e Windows)
+ssh -p [PORTA] [USUARIO]@[IP-DO-SERVIDOR]
+# Substitua os termos pelos dados de acesso da servidor:
+# ssh -p: para dar início ao login
+# [PORTA]: insira o número da porta SSH do servidor: nem todo admin mantém a porta padrão de acesso ao SSH (fica a dica!) 
+# [USUÁRIO]: coloque o usuário existente no servidor acessado: Servidores VPS e Dedicado Linux: use o usuário root, por exemplo; algumas distros linux baseadas em ubuntu utilizam por padrão ubunto@[ipdoservidor] como usuário root 
+# [@IP-DO-SERVIDOR]: insira o IP do servidor ou o domínio apontado e propagado
+# Exemplo: ssh -p 22022 root@123.456.789.10
+# Em alguns casos esta ação só vai aparecer se for a primeira conexão - Se solicitado, para confirmar a conexão digite yes e aperte a tecla Enter
+# Em seguida, insira a senha - Por segurança, os caracteres não são exibidos
+# Servidores VPS e Dedicado Linux: insira a senha root
+# Depois de inserir a senha, aperte a tecla Enter
+# Pronto! Se a autenticação for bem-sucedida, o terminal exibirá a tela de acesso ao servidor.
+
+# Trocar a senha, acesse o servidor via SSH e no terminal execute o comando:
+passwd
