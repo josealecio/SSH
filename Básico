@@ -27,3 +27,5 @@ ssh -p [PORTA] [USUARIO]@[IP-DO-SERVIDOR]
 
 # Trocar a senha, acesse o servidor via SSH e no terminal execute o comando:
 passwd
+
+# O obvio precisa ser dito! "Nunca esquece de fazer backup das suas chavves SSH
